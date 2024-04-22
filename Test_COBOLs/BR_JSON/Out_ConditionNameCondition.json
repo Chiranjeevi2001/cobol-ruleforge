@@ -1,0 +1,9 @@
+{
+  "id": "BR-002",
+  "description": "Grade a student based on the marks obtained. If marks are between 30 and 100 (inclusive), display 'Passed' with the marks, otherwise display 'Failed' with the marks.",
+  "condition": "M_NUMBER",
+  "output": {
+    "passed": "Passed with \\n${M_NUMBER} marks",
+    "failed": "FAILED with \\n${M_NUMBER} marks"
+  }
+}

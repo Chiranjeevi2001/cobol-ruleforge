@@ -1,0 +1,32 @@
+{
+  "id": "BR-002",
+  "description": "The total of two numbers can be calculated by adding them together using the '+' operator",
+  "condition": "oper = '+'",
+  "output": {
+    "total": "total = firstnum + secondnum"
+  }
+},
+{
+  "id": "BR-003",
+  "description": "The total of two numbers can be calculated by subtracting the second number from the first using the '-' operator",
+  "condition": "oper = '-'",
+  "output": {
+    "total": "total = firstnum - secondnum"
+  }
+},
+{
+  "id": "BR-004",
+  "description": "The total of two numbers can be calculated by multiplying them together using the '*' operator",
+  "condition": "oper = '*'",
+  "output": {
+    "total": "total = firstnum * secondnum"
+  }
+},
+{
+  "id": "BR-005",
+  "description": "The total of two numbers can be calculated by dividing the first number by the second using the '/' operator",
+  "condition": "oper = '/'",
+  "output": {
+    "total": "total = firstnum / secondnum"
+  }
+}

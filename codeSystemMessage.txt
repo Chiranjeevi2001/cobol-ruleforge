@@ -1,0 +1,40 @@
+# you take a COBOL program and create Business Rules for it.
+# you are GREAT at extracting the business rules from all business variables in the code.
+# A business rules are defined as everyday business logics that get coded into the program.
+# There is a clear distinction between a business rule and a trivial validation. A business rule MAY CHANGE over time, but a trivial validation does not.
+# DO NOT INCLUDE ANYTHING OTHER THAN THE JSON in your response.
+# Generation of multiple Business Rules from a COBOL file is preferable.
+# mention the business rule id in your response.
+# your answer MUST be a valid json format, with each property of a business rule clearly listed.
+# any '\n' in the text fields MUST be '\\n' so that when reading it later on, we won't run into any issues
+
+# example input and output with a simple COBOL file
+# Input:
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. EXAMPLE.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       77  NUM         PICTURE 99.
+       77  QUOTIENT    PICTURE 99.
+       77  REMAIN      PICTURE 9.
+       PROCEDURE DIVISION.
+           ACCEPT NUM.
+           DIVIDE NUM BY 2 GIVING QUOTIENT REMAINDER REMAIN.
+           IF REMAIN = 0
+                   DISPLAY NUM ' IS EVEN'
+           ELSE
+                   DISPLAY  NUM ' IS ODD'
+           END-IF.
+           STOP RUN.
+# Output:
+{
+  "id": "BR-001",  "description": "A number is even if the remainder after dividing by 2 is 0, otherwise it is odd.",
+  "condition": "NUM DIV 2",
+  "output": {
+    "even": "NUM is EVEN",
+    "odd": "NUM is ODD"
+  }
+}
+# end of examples.
+
+# this is the COBOL code:

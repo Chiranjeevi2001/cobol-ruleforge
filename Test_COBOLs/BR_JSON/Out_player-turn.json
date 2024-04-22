@@ -1,0 +1,11 @@
+{
+  "id": "BR-001",
+  "description": "A players turn depends on their bidding strategy. if they have not bid yet, they either bid on the next card, the highest card or the card nearest the prize card, based on their strategy. If their strategy is not recognized, a severe error is displayed.",
+  "condition": "PLAYER-BID = 0",
+  "output": {
+    "next-card": "bid on the next card",
+    "highest-card": "bid on the highest card",
+    "nearest-card": "bid on the nearest card to the prize.",
+    "error": "Display error message."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "BR-001",
+  "description": "A string is alphabetic if it contains only alphabetic characters.",
+  "condition": "STR01 IS ALPHABETIC",
+  "output": {
+    "alphabetic": "STR01 IS ALPHABETIC"
+  }
+},
+{
+  "id": "BR-002",
+  "description": "A number is numeric if it contains only numeric characters.",
+  "condition": "NUM01 IS NUMERIC",
+  "output": {
+    "numeric": "NUM01 IS NUMERIC"
+  }
+},
+{
+  "id": "BR-003",
+  "description": "A string is numeric if it contains only numeric characters. Otherwise, it is alphabetic.",
+  "condition": "STR01 IS NUMERIC",
+  "output": {
+    "numeric": "STR01 IS NUMERIC",
+    "alphabetic": "STR01 ISNT NUMERIC IS ALPHABETIC"
+  }
+}

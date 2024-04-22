@@ -1,0 +1,32 @@
+{
+  "id": "BR-002",
+  "description": "If the number is divisible by 3 and 5, the output is \"FizzBuzz\".",
+  "condition": "FUNCTION MOD(COUNTER, 3) IS EQUAL TO ZERO AND FUNCTION MOD(COUNTER, 5) IS EQUAL TO ZERO",
+  "output": {
+    "FizzBuzz": "FizzBuzz"
+  }
+},
+{
+  "id": "BR-003",
+  "description": "If the number is divisible by 3, the output is \"Fizz\".",
+  "condition": "FUNCTION MOD(COUNTER, 3) IS EQUAL TO ZERO",
+  "output": {
+    "Fizz": "Fizz"
+  }
+},
+{
+  "id": "BR-004",
+  "description": "If the number is divisible by 5, the output is \"Buzz\".",
+  "condition": "FUNCTION MOD(COUNTER, 5) IS EQUAL TO ZERO",
+  "output": {
+    "Buzz": "Buzz"
+  }
+},
+{
+  "id": "BR-005",
+  "description": "If the number is not divisible by 3 or 5, the output is the number itself.",
+  "condition": "WHEN OTHER",
+  "output": {
+    "number": "COUNTER"
+  }
+}

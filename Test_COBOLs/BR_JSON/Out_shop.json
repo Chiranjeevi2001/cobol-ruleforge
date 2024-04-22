@@ -1,0 +1,52 @@
+{
+  "id": "BR-002",
+  "description": "The store is open if OP is 1.",
+  "condition": "OP = 1",
+  "output": {
+    "open": "SHOP IS OPEN",
+    "closed": "SHOP IS CLOSED"
+  }
+}
+{
+  "id": "BR-003",
+  "description": "For each product, a random quantity and price are set at the initialization of the program.",
+  "condition": "N/A",
+  "output": {
+    "quantity": "QT-VEG/QT-MEAT/QT-BREAD/QT-MILK/QT-FRUIT",
+    "price": "PR-VEG/PR-MEAT/PR-BREAD/PR-MILK/PR-FRUIT"
+  }
+}
+{
+  "id": "BR-004",
+  "description": "A product is needed if a random number generator returns 1.",
+  "condition": "FUNCTION RANDOM (1) * 2",
+  "output": {
+    "needed": "NEED = 1",
+    "not needed": "NEED = 0"
+  }
+}
+{
+  "id": "BR-005",
+  "description": "A product can be bought if there is enough quantity, enough money and space in the bag.",
+  "condition": "QT > 0 AND MONEY > PR AND BAG < MAX-CAP",
+  "output": {
+    "can buy": "Bought the product and updated the quantity, money and bag count."
+  }
+}
+{
+  "id": "BR-006",
+  "description": "The program continues to buy products until there is no more money or no more space in the bag.",
+  "condition": "MONEY <= 0 OR BAG >= MAX-CAP",
+  "output": {
+    "stop buying": "The program stops buying products."
+  }
+}
+{
+  "id": "BR-007",
+  "description": "At the end of the program, the remaining money and the number of products bought are displayed.",
+  "condition": "N/A",
+  "output": {
+    "rest": "REST",
+    "bag": "BAG"
+  }
+}

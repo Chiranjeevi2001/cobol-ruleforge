@@ -1,0 +1,11 @@
+{
+  "id": "BR-002",
+  "description": "An average media is calculated from two grades and the result is evaluated to determine the student's situation.",
+  "condition": "MEDIA is evaluated",
+  "output": {
+    "approved with bonus": "MEDIA is 10",
+    "approved": "MEDIA is between 6 and 9.9",
+    "in recovery": "MEDIA is between 2 and 5.9",
+    "failed": "MEDIA is anything else"
+  }
+}

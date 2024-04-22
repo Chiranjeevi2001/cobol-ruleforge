@@ -1,0 +1,10 @@
+{
+  "id": "BR-001",
+  "description": "The average of the two grades must be greater than or equal to 7 to be approved, greater than or equal to 2 to be in recovery and less than 2 to be failed.",
+  "condition": "WRK-MEDIA >= 2",
+  "output": {
+    "approved": "SITUACAO: APROVADO",
+    "recovery": "SITUACAO: RECUPERACAO",
+    "failed": "SITUACAO: REPROVADO"
+  }
+}

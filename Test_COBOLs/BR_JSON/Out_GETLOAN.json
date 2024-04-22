@@ -1,0 +1,9 @@
+{
+  "id": "BR-002",
+  "description": "If the account number is 0001, the loan rate is 1.25, otherwise it is 7.20.",
+  "condition": "ACCOUNT-NUMBER-IN = '0001'",
+  "output": {
+    "1.25": "LOAN-RATE = '1.25'",
+    "7.20": "LOAN-RATE = '7.20'"
+  }
+}

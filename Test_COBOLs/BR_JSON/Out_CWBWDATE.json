@@ -1,0 +1,28 @@
+{
+  "id": "BR-001",
+  "description": "The number of years of service is calculated as the difference between the current year and the hire year, minus one if the current month is earlier than the hire month, and minus one again if the current day is earlier than the hire day.",
+  "condition": "The current month is not equal to the hire month or the current day is not equal to the hire day",
+  "output": {
+    "years_of_service": "YRS-OF-SERVICE = (100 + RUN-YY) - HIRE-YY",
+    "years_of_service_minus_one": "YRS-OF-SERVICE = YRS-OF-SERVICE - 1",
+    "years_of_service_minus_one_again": "YRS-OF-SERVICE = YRS-OF-SERVICE - 1"
+  }
+},
+{
+  "id": "BR-002",
+  "description": "If the current month is February, then perform the calculation to determine if it is a leap year. If it is a leap year and the current day is 29, then set the EOM-SW to 'Y'.",
+  "condition": "The current month is February",
+  "output": {
+    "eom_sw_y": "MOVE 'Y' TO EOM-SW",
+    "eom_sw_n": "do nothing"
+  }
+},
+{
+  "id": "BR-003",
+  "description": "If the current day is equal to the last day of the current month, then set the EOM-SW to 'Y'.",
+  "condition": "The current day is equal to the last day of the current month",
+  "output": {
+    "eom_sw_y": "MOVE 'Y' TO EOM-SW",
+    "eom_sw_n": "do nothing"
+  }
+}
