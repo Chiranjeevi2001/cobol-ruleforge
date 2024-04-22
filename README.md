@@ -22,6 +22,14 @@ First, you will need to store your COBOL files in the folder `Test_COBOLs/InputF
 2. `glob` - To traverse file system efficiently.
 3. `evaluate` - To analyze and compare the results of conventional code summarization and BR summarization.
 
+## New Things Leanrt
+
+1. How important are Business Rules in defining the function of a legacy codebase.
+2. Leveraging LLMs to ease the task of extracting information out of complex codes.
+3. Few-shot and one-shot prompting techniques.
+4. COBOL code analysis and Business Rule identification.
+5. Difference between trivial validations and Business Rules. 
+
 ## Author
 
 [@Chiranjeevi](https://github.com/Chiranjeevi2001)
