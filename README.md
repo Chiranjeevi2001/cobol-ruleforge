@@ -10,7 +10,9 @@ First, you will need to store your COBOL files in the folder `Test_COBOLs/InputF
 4. Finally, to evaluate the results, run the `CompareSummaries.ipynb` file to get the BLEU ROUGE scores of the generated summaries
 
 
-## Dependencies
+## Before you start...
+
+Register on Google's Generative AI cloud platform and get yourself a gemini  API key. Paste it in the space given in the code and run them.
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
