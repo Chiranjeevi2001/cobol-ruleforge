@@ -1,6 +1,6 @@
 {
   "id": "BR-001",
-  "description": "A string is alphabetic if it contains only alphabetic characters.",
+  "description": "A numeric variable contains only digits, a sign, and a decimal point. An alphabetic variable contains only letters.",
   "condition": "STR01 IS ALPHABETIC",
   "output": {
     "alphabetic": "STR01 IS ALPHABETIC"
@@ -8,7 +8,7 @@
 },
 {
   "id": "BR-002",
-  "description": "A number is numeric if it contains only numeric characters.",
+  "description": "A numeric variable contains only digits, a sign, and a decimal point. An alphabetic variable contains only letters.",
   "condition": "NUM01 IS NUMERIC",
   "output": {
     "numeric": "NUM01 IS NUMERIC"
@@ -16,10 +16,9 @@
 },
 {
   "id": "BR-003",
-  "description": "A string is numeric if it contains only numeric characters. Otherwise, it is alphabetic.",
+  "description": "A numeric variable contains only digits, a sign, and a decimal point. An alphabetic variable contains only letters.",
   "condition": "STR01 IS NUMERIC",
   "output": {
-    "numeric": "STR01 IS NUMERIC",
-    "alphabetic": "STR01 ISNT NUMERIC IS ALPHABETIC"
+    "not_numeric": "STR01 ISNT NUMERIC IS ALPHABETIC"
   }
 }

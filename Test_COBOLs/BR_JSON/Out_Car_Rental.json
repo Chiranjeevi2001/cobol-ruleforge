@@ -1,32 +1,32 @@
 {
   "id": "BR-001",
-  "description": "If the number of kilometers is greater than 75, the remaining kilometers are considered for the payment.",
-  "condition": "KILOMETERS > 75",
+  "description": "When the kilometers driven are less than or equal to 75, no charge is made for kilometers.",
+  "condition": "KILOMETERS <= 75",
   "output": {
-    "true": "KILOMETERS = KILOMETERS - 75"
+    "is_charged": false
   }
 },
 {
   "id": "BR-002",
-  "description": "Volkswagen cars have a payment of 0.5 per kilometer and 10 times the number of rental days.",
-  "condition": "CAR_TYPE = 1",
+  "description": "For every kilometer driven over 75, the charge is 0.5 currency units for Volkswagen, 0.55 for Toyota, and 0.65 for Mercedes.",
+  "condition": "KILOMETERS > 75",
   "output": {
-    "payment": "KILOMETERS_PAYMENT = KILOMETERS * 0.5, RENTAL_DAYS_TOTAL = 10 * NUM_DAYS, PAYMENT = KILOMETERS_PAYMENT + RENTAL_DAYS_TOTAL"
+    "charge_per_kilometer": {
+      "Volkswagen": 0.5,
+      "Toyota": 0.55,
+      "Mercedes": 0.65
+    }
   }
 },
 {
   "id": "BR-003",
-  "description": "Toyota cars have a payment of 0.55 per kilometer and 12.5 times the number of rental days.",
-  "condition": "CAR_TYPE = 2",
+  "description": "The number of rental days is multiplied by 10, 12.5, or 16, depending on the car type (Volkswagen, Toyota, or Mercedes, respectively).",
+  "condition": true,
   "output": {
-    "payment": "KILOMETERS_PAYMENT = KILOMETERS * 0.55, RENTAL_DAYS_TOTAL = 12.5 * NUM_DAYS, PAYMENT = KILOMETERS_PAYMENT + RENTAL_DAYS_TOTAL"
-  }
-},
-{
-  "id": "BR-004",
-  "description": "Mercedes cars have a payment of 0.65 per kilometer and 16 times the number of rental days.",
-  "condition": "CAR_TYPE = 3",
-  "output": {
-    "payment": "KILOMETERS_PAYMENT = KILOMETERS * 0.65, RENTAL_DAYS_TOTAL = 16 * NUM_DAYS, PAYMENT = KILOMETERS_PAYMENT + RENTAL_DAYS_TOTAL"
+    "rental_days_multiplier": {
+      "Volkswagen": 10,
+      "Toyota": 12.5,
+      "Mercedes": 16
+    }
   }
 }

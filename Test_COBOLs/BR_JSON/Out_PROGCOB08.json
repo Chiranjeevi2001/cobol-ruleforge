@@ -1,11 +1,11 @@
 {
-  "id": "BR-002",
-  "description": "An average media is calculated from two grades and the result is evaluated to determine the student's situation.",
-  "condition": "MEDIA is evaluated",
+  "id": "BR-001",
+  "description": "The student has to earn an average of 10 or more to be approved with bonus,\\nThe student has to earn an average between 6 and 9,9 to be approved without bonus,\\nThe student has to earn an average between 2 and 5,9 to be able to take the final test,\\nOtherwise the student has failed the course.",
+  "condition": "WRK-MEDIA >= 10",
   "output": {
-    "approved with bonus": "MEDIA is 10",
-    "approved": "MEDIA is between 6 and 9.9",
-    "in recovery": "MEDIA is between 2 and 5.9",
-    "failed": "MEDIA is anything else"
+    "approved_with_bonus": "APROVADO + BONUS",
+    "approved_without_bonus": "SITUACAO: APROVADO",
+    "remediation": "RECUPERACAO",
+    "failed": "REPROVADO"
   }
 }

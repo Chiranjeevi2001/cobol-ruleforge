@@ -1,11 +1,10 @@
 # Business Rules Summary
-This document provides an overview of a single business rule related to student evaluation.
-
-## Rule 1: Student Evaluation (BR-002)
-* Description: This rule evaluates a student's situation based on their average grade (MEDIA).
-* Condition: `MEDIA is evaluated`
+## Rule 1: Student Course Status Determination (BR-001)
+* Description: This rule determines the course status of a student based on their weighted average.
+* Condition: `WRK-MEDIA >= 10`
 * Output:
-	* If `MEDIA is 10`: `approved with bonus`
-	* If `MEDIA is between 6 and 9.9`: `approved`
-	* If `MEDIA is between 2 and 5.9`: `in recovery`
-	* For any other value of `MEDIA`: `failed`
+	* If the condition is met: `APROVADO + BONUS`
+	* If the condition is not met, check the following conditions:
+		* `WRK-MEDIA >= 6 AND WRK-MEDIA <= 9,9`: `SITUACAO: APROVADO`
+		* `WRK-MEDIA >= 2 AND WRK-MEDIA <= 5,9`: `RECUPERACAO`
+		* Otherwise: `REPROVADO`

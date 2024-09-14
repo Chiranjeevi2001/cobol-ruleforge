@@ -1,7 +1,13 @@
 #!/bin/bash
 
+# Execute preprocess file
+python ./src/preprocess.py
+
+# Extract BRs
+python ./src/BR_generator.py
+
 # Execute Code Summarizer
-python CodeSummarizer.py
+python ./src/CodeSummarizer.py
 
 # Execute BR Summarizer
-python BRSummarizer.py
+python ./src/BRSummarizer.py

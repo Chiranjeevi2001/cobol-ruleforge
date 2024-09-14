@@ -1,6 +1,5 @@
 {
-  "id": "BR-002",
-  "description": "The store is open if OP is 1.",
+  "id": "BR-002",  "description": "The shop is open if OP (Operation) is equal to 1, otherwise it is closed.",
   "condition": "OP = 1",
   "output": {
     "open": "SHOP IS OPEN",
@@ -8,45 +7,32 @@
   }
 }
 {
-  "id": "BR-003",
-  "description": "For each product, a random quantity and price are set at the initialization of the program.",
-  "condition": "N/A",
+  "id": "BR-003",  "description": "If there is a need for a product (NEED = 1) and there are still products available (positive quantity), the buyer can purchase the product if they have enough money (MONEY) and there is space in the bag (BAG).",
+  "condition": "NEED = 1 AND QT-*>0 AND MONEY > PR-* AND BAG < MAX-CAP",  # * refers to any of the product types (VEG, MEAT, BREAD, MILK, FRUIT)
   "output": {
-    "quantity": "QT-VEG/QT-MEAT/QT-BREAD/QT-MILK/QT-FRUIT",
-    "price": "PR-VEG/PR-MEAT/PR-BREAD/PR-MILK/PR-FRUIT"
+    "success": "Product purchased, new MONEY: {"$MONEY"}, new BAG: {"$BAG"}",
+    "insufficientMoney": "Not enough money, product not purchased",
+    "bagFull": "Bag is full, product not purchased"
   }
 }
 {
-  "id": "BR-004",
-  "description": "A product is needed if a random number generator returns 1.",
-  "condition": "FUNCTION RANDOM (1) * 2",
-  "output": {
-    "needed": "NEED = 1",
-    "not needed": "NEED = 0"
-  }
-}
-{
-  "id": "BR-005",
-  "description": "A product can be bought if there is enough quantity, enough money and space in the bag.",
-  "condition": "QT > 0 AND MONEY > PR AND BAG < MAX-CAP",
-  "output": {
-    "can buy": "Bought the product and updated the quantity, money and bag count."
-  }
-}
-{
-  "id": "BR-006",
-  "description": "The program continues to buy products until there is no more money or no more space in the bag.",
+  "id": "BR-004",  "description": "If the customer has run out of money or the bag is full, the program stops shopping.",
   "condition": "MONEY <= 0 OR BAG >= MAX-CAP",
   "output": {
-    "stop buying": "The program stops buying products."
+    "continueShopping": "Continue shopping",
+    "stopShopping": "Stop shopping"
   }
 }
 {
-  "id": "BR-007",
-  "description": "At the end of the program, the remaining money and the number of products bought are displayed.",
-  "condition": "N/A",
+  "id": "BR-005",  "description": "The quantity and price of each product is generated randomly during initialization.",
+  "condition": null,
+  "output": {}
+}
+{
+  "id": "BR-006",  "description": "A random number between 0 and 1 is generated to determine if the customer needs a product or not.",
+  "condition": null,
   "output": {
-    "rest": "REST",
-    "bag": "BAG"
+    "need": "Item needed",
+    "noNeed": "Item not needed"
   }
 }

@@ -1,28 +1,32 @@
-## COBOL Code Analysis: Command-Line Calculator
+## COBOL Code Analysis: Simple Calculator Program
 
-The provided COBOL code is a command-line calculator that takes three parameters: two numeric values and an arithmetic operator. Here's a summary of its functionality and structure:
+### Overview
 
-**Data Division:**
+This COBOL program acts as a basic calculator, allowing users to perform arithmetic operations on two input numbers. The supported operations include addition, subtraction, multiplication, and division.
 
-*   **Working-Storage Section:** 
-    *   Four numeric variables are declared to hold the input values and results:
-        *   `firstnum`: A four-digit packed decimal integer to store the first input number.
-        *   `oper`: A one-character variable to store the arithmetic operator.
-        *   `secondnum`: A four-digit packed decimal integer to store the second input number.
-        *   `total`: An eight-digit display integer to store the result of the calculation.
+### Data Division
 
-**Procedure Division:**
+* **Working-Storage Section:**
+    *   Four numeric variables are declared:
+        *   `firstnum`: A four-digit packed-decimal integer to store the first input number.
+        *   `oper`: A one-character alphabetic field to store the mathematical operation.
+        *   `secondnum`: A four-digit packed-decimal integer to store the second input number.
+        *   `total`: An eight-digit display field to store the result of the calculation.
 
-1.  **Input Acquisition:** The `ACCEPT` statements obtain the values of `firstnum`, `oper`, and `secondnum` from the command-line arguments.
-2.  **Arithmetic Operation:** An `IF` statement chain determines the appropriate arithmetic operation based on the value of `oper`:
-    *   `+`: The `COMPUTE` statement adds `firstnum` and `secondnum` and stores the result in `total`.
-    *   `-`: The `COMPUTE` statement subtracts `secondnum` from `firstnum` and stores the result in `total`.
-    *   `*`: The `COMPUTE` statement multiplies `firstnum` and `secondnum` and stores the result in `total`.
-    *   `/`: The `COMPUTE` statement divides `firstnum` by `secondnum` and stores the result in `total`.
-    *   In case of an invalid operator, an error message is displayed.
-3.  **Output Display:** The final result is displayed on the console using the `DISPLAY` statement.
-4.  **Termination:** The program concludes its execution with the `STOP RUN` statement.
+### Procedure Division
 
-**Summary:**
+1.  **Input Acquisition:** The program accepts the three input values (`firstnum`, `oper`, and `secondnum`) from the calling environment using the `ACCEPT` statements.
+2.  **Input Validation:** Basic validation is performed to ensure that the operation character (`oper`) is one of the supported operators ('+', '-', '*', or '/').
+3.  **Calculation:** The `COMPUTE` statement is used to perform the appropriate arithmetic operation based on the operation character:
+    *   Addition: `total = firstnum + secondnum`
+    *   Subtraction: `total = firstnum - secondnum`
+    *   Multiplication: `total = firstnum * secondnum`
+    *   Division: `total = firstnum / secondnum`
+4.  **Output:** The program displays the initial values and the result of the calculation:
+    *   The input values are displayed along with the operator.
+    *   The calculated `total` is displayed with a descriptive message.
+5.  **Termination:** The program concludes its execution with the `STOP RUN` statement.
 
-This COBOL program demonstrates the handling of command-line arguments, conditional branching, and basic arithmetic operations. It provides users with a convenient tool for performing simple calculations from the command line.
+### Summary
+
+This COBOL program provides a straightforward example of arithmetic operations and conditional logic. It supports basic mathematical operations and provides a user-friendly interface for input and output. The program effectively performs calculations based on user-provided operands and displays the results accordingly.

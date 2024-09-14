@@ -1,9 +1,8 @@
 {
-  "id": "BR-002",
-  "description": "If the account number is 0001, the loan rate is 1.25, otherwise it is 7.20.",
+  "id": "BR-002",  "description": "If the Customer Number (CUST-NO-IN) is 0001, then set the Loan Rate to 1.25%; otherwise, set the Loan Rate to 7.20%.",
   "condition": "ACCOUNT-NUMBER-IN = '0001'",
   "output": {
-    "1.25": "LOAN-RATE = '1.25'",
-    "7.20": "LOAN-RATE = '7.20'"
+    "CUST-NO-IN = 0001": "Loan rate set to 1.25%",
+    "CUST-NO-IN != 0001": "Loan rate set to 7.20%"
   }
 }

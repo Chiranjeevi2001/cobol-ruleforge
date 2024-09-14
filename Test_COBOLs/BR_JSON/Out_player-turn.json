@@ -1,11 +1,17 @@
 {
-  "id": "BR-001",
-  "description": "A players turn depends on their bidding strategy. if they have not bid yet, they either bid on the next card, the highest card or the card nearest the prize card, based on their strategy. If their strategy is not recognized, a severe error is displayed.",
+  "id": "BR-001",  "description": "A player's bid is initialized to 0.",
   "condition": "PLAYER-BID = 0",
   "output": {
-    "next-card": "bid on the next card",
-    "highest-card": "bid on the highest card",
-    "nearest-card": "bid on the nearest card to the prize.",
-    "error": "Display error message."
+    "initialize": "MOVE 0 TO PLAYER-BID.",
+  }
+},
+{
+  "id": "BR-002",  "description": "If a player has not bid yet, call a strategy to determine the bid.",
+  "condition": "PLAYER-BID = 0",
+  "output": {
+    "strategy-next": "CALL \"strategy-next\" USING PRIZE-CARD, PLAYER-REC",
+    "strategy-max": "CALL \"strategy-max\" USING PRIZE-CARD, PLAYER-REC",
+    "strategy-nearest": "CALL \"strategy-nearest\" USING PRIZE-CARD, PLAYER-REC",
+    "error": "DISPLAY \"TRACER SEVERE ERROR P-S: \" PLAYER-STRATEGY",
   }
 }

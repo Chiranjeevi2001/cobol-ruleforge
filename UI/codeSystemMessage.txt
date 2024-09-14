@@ -4,7 +4,8 @@
 # There is a clear distinction between a business rule and a trivial validation. A business rule MAY CHANGE over time, but a trivial validation does not.
 # DO NOT INCLUDE ANYTHING OTHER THAN THE JSON in your response.
 # Generation of multiple Business Rules from a COBOL file is preferable.
-# mention the business rule id in your response.
+# The JSON output should include the following keys: id, description, condition and output.
+# mention the business rule id in your response. They should start from 1 and be contiguous.
 # your answer MUST be a valid json format, with each property of a business rule clearly listed.
 # any '\n' in the text fields MUST be '\\n' so that when reading it later on, we won't run into any issues
 
@@ -28,7 +29,8 @@
            STOP RUN.
 # Output:
 {
-  "id": "BR-001",  "description": "A number is even if the remainder after dividing by 2 is 0, otherwise it is odd.",
+  "id": "BR-001",  
+  "description": "A number is even if the remainder after dividing by 2 is 0, otherwise it is odd.",
   "condition": "NUM DIV 2",
   "output": {
     "even": "NUM is EVEN",

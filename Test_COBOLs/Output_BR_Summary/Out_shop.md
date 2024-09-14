@@ -1,41 +1,32 @@
-# Business Rules Summary
+#  Business Rules Summary
+This document outlines five  business rules that collectively govern the process of grocery shopping.
 
-This summary provides an overview of seven business rules related to product purchasing and shop availability.
-
-## Rule 1: Shop Availability (BR-002)
-* Description: This rule determines whether the store is open.
+## Rule 1: Shop Status (BR-002)
+* Description: This rule determines if the shop is open or closed based on the "Operation" status (OP).
 * Condition: `OP = 1`
 * Output:
-    * If the condition is met: `SHOP IS OPEN`, otherwise: `SHOP IS CLOSED`
+	* If the condition is met: `SHOP IS OPEN`
+	* If the condition is not met: `SHOP IS CLOSED`
 
-## Rule 2: Product Initialization (BR-003)
-* Description: This rule initializes random product quantities and prices.
-* Condition: `N/A`
+## Rule 2: Product Purchase (BR-003)
+* Description: This rule defines the conditions under which a buyer can purchase a product.
+* Condition: `NEED =1 AND QT-1 > 0 AND MONEY > PR-*AND BAG < MAX-CAP`
 * Output:
-    * Product quantity: `QT-VEG/QT-MEAT/QT-BREAD/QT-MILK/QT-FRUIT`
-    * Product price: `PR-VEG/PR-MEAT/PR-BREAD/PR-MILK/PR-FRUIT`
+	* If all conditions are met: `Product purchased, new MONEY: {"$MONEY"}, new BAG: {"$BAG"}`
+	* If `MONEY <= 0 or BAG >= MAX-CAP`:"Not enough money, product not purchased"
+    * If `BAG >= MAX-CAP`: "Bag is full, product not purchased"
 
-## Rule 3: Product Need Determination (BR-004)
-* Description: This rule determines product need based on a random number generator.
-* Condition: `FUNCTION RANDOM (1) * 2`
+## Rule 3: Shopping Continuation (BR-004)
+* Description: This rule determines if the shopping process should continue or stop based on the customer's financial situation and bag capacity.
+* Condition: `MONEY <= 0 or BAG >= MAX-CAP`
 * Output:
-    * If the condition is met: `NEED = 1`, otherwise: `NEED = 0`
+	* If `MONEY > 0 and BAG < MAX-CAP`: "Continue shopping"
+    * If `MONEY <= 0 or BAG >= MAX-CAP`: "Stop shopping"
 
-## Rule 4: Product Purchase Conditions (BR-005)
-* Description: This rule checks if a product can be bought based on quantity, money, and bag capacity.
-* Condition: `QT > 0 AND MONEY > PR AND BAG < MAX-CAP`
-* Output:
-    * If all conditions are met: Product is purchased and relevant updates are made.
+## Rule 4: Product Initialization (BR-005)
+* Description: This rule describes the random generation of product quantity and price during initialization.
+* Output: Initialization of `QT` and `PR` values for each product
 
-## Rule 5: Product Purchase Termination (BR-006)
-* Description: This rule determines if the program should stop buying products.
-* Condition: `MONEY <= 0 OR BAG >= MAX-CAP`
-* Output:
-    * If any condition is met: The program stops buying products.
-
-## Rule 6: Program Completion (BR-007)
-* Description: This rule displays remaining money and the number of products bought at the end of the program.
-* Condition: `N/A`
-* Output:
-    * Remaining money: `REST`
-    * Products bought: `BAG`
+## Rule 5: Customer Need Generation (BR-006)
+* Description: This rule explains the generation of a random number to determine if the customer needs a product.
+* Output: Generation of a random number to determine `NEED` status for each product
