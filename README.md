@@ -4,16 +4,19 @@ This work deals with extracting business rules from legacy COBOL codebases and s
 
 ## Running the project
 First, you will need to store your COBOL files in the folder `Test_COBOLs/InputFiles`. After making sure that all files are placed in the folder, follow the steps given below:
-	1. Clone the repository
+1.  Clone the repository
 	```
 	git clone https://github.com/Chiranjeevi2001/cobol-ruleforge.git
 	```
-	2. Go to (Google's AI Studio)[https://aistudio.google.com/app/] and get the `Gemini API Key`, and paste it inside the codes in `./src`.
-	3. Give execution permission to Summarize.sh
+
+2. Go to (Google's AI Studio)[https://aistudio.google.com/app/] and get the `Gemini API Key`, and paste it inside the codes in `./src`.
+
+3. Give execution permission to Summarize.sh
 	```
 	chmod +x Summarize.sh
 	```
-	4. Run the shell script
+
+4. Run the shell script
 	```
 	./Summarize.sh
 	```
