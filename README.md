@@ -9,7 +9,7 @@ First, you will need to store your COBOL files in the folder `Test_COBOLs/InputF
 	git clone https://github.com/Chiranjeevi2001/cobol-ruleforge.git
 	```
 
-2. Go to (Google's AI Studio)[https://aistudio.google.com/app/] and get the `Gemini API Key`, and paste it inside the codes in `./src`.
+2. Go to [Google's AI Studio](https://aistudio.google.com/app/) and get the `Gemini API Key`, and paste it inside the codes in `./src`.
 
 3. Give execution permission to Summarize.sh
 	```
