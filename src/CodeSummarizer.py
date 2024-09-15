@@ -7,7 +7,7 @@ import os
 directory_path_CBL = "../Test_COBOLs/InputFiles"
 output_directory = "../Test_COBOLs/Output_Code_Summary"
 
-geminiApiKey = 'AIzaSyABQ7adBwnlHTLO8JgIh3w33kqihU5LjQY'
+geminiApiKey = ''
 
 with open('codeSummarizationMessage.txt','r') as file:
     code_systemMessage = file.read()

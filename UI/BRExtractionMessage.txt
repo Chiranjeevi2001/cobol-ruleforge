@@ -3,7 +3,7 @@
 # A business rules are defined as everyday business logics that get coded into the program.
 # There is a clear distinction between a business rule and a trivial validation. A business rule MAY CHANGE over time, but a trivial validation does not.
 # DO NOT INCLUDE ANYTHING OTHER THAN THE JSON in your response.
-# Generation of multiple Business Rules from a COBOL file is preferable.
+# GET ALL POSSIBLE BUSINESS RULES FROM THE FILE. THERE SHOULD BE MORE THAN ONE BUSINESS RULES IF POSSIBLE.
 # The JSON output should include the following keys: id, description, condition and output.
 # mention the business rule id in your response. They should start from 1 and be contiguous.
 # your answer MUST be a valid json format, with each property of a business rule clearly listed.

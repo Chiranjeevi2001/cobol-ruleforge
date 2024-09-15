@@ -17,7 +17,7 @@ import pandas as pd
 directory_path_CBL = "../Test_COBOLs/InputFiles"
 output_directory = "../Test_COBOLs/BR_JSON"
 
-geminiApiKey = 'AIzaSyABQ7adBwnlHTLO8JgIh3w33kqihU5LjQY'
+geminiApiKey = ''
 
 with open('codeSystemMessage.txt','r') as file:
     code_systemMessage = file.read()
