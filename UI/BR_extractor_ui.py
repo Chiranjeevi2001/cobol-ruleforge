@@ -11,7 +11,7 @@ def clear_cache():
 
 st.button('Clear Cache', on_click=clear_cache)
 # Set up the API key
-geminiApiKey = ''
+geminiApiKey = 'AIzaSyABQ7adBwnlHTLO8JgIh3w33kqihU5LjQY'
 genai.configure(api_key=geminiApiKey)
 model = genai.GenerativeModel('gemini-pro')
 
