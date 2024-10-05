@@ -1,9 +1,0 @@
-{
-  "id": "BR-001",
-  "description": "Determine if a score passed or failed.",
-  "condition": "M_NUMBER",
-  "output": {
-    "pass": "Passed with ' M_NUMBER ' marks",
-    "fail": "FAILED with ' M_NUMBER ' marks"
-  }
-}

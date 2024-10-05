@@ -1,8 +1,0 @@
-{
-  "id": "BR-002",
-  "description": "The mathematical operand must be one of '+', '-', '*', or '/'",
-  "condition": "oper NOT IN {'+', '-', '*', '/'}",
-  "output": {
-    "error_message": "Sorry, I do not know that operator.",
-  }
-}
