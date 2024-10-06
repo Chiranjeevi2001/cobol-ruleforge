@@ -35,7 +35,7 @@ First, you will need to store your COBOL files in the folder `Test_COBOLs/InputF
 3. `evaluate` - To analyze and compare the results of conventional code summarization and BR summarization.
 
 ## Tool Website
-![COBOL RuleForge](https://chiranjeevi2001.github.io/cobol-ruleforge/)
+[COBOL RuleForge](https://chiranjeevi2001.github.io/cobol-ruleforge/)
 
 
 ## Author
