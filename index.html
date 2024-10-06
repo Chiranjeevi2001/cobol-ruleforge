@@ -68,7 +68,7 @@
                                     COBOL RuleForge, a tool designed to extract Business Rules from legacy COBOL codes and then summarize them. 
                                     The tool is developed to help developers and practitioners to understand the business rules in the legacy COBOL code. 
                                     The tool is developed using the Python programming. 
-                                    It uses few-shot prompting with Google's Gemini-Pro model to extract the business rules and then summarize them in a markdown filr
+                                    It uses few-shot prompting with Google's Gemini-Pro model to extract the business rules and then summarize them in a markdown file.
                                     </p>
 <!--                                     <p style="color: red;">
                                         <u>Note</u>: The current version of eTagger may have issues on runnning on some architectures of Mac systems.  
@@ -90,6 +90,7 @@
                                             <li>Storage: 25 MB</li>
                                         </ul>
                                             The software was tested on a Windows 11 system with 16 GB RAM and NVIDIA MX350 2GB GPU.
+                                            <br/>
                                         <b>Software:</b>
 
                                         <ul>
@@ -118,72 +119,55 @@
 					    <li>sudo apt install --no-install-recommends r-base</li>
 					    <li>sudo -i R</li>
 					   </ul> -->
-					    
+                                
                                     </div>
-                                    <h3 class="block-title" id="from-github">From Github</h3>
+                                </section>
+
+                                <section id="usage" class="doc-section">
+                                    <h2 class="section-title">Running the project</h2>
+                                    <h3 class="block-title" id="from-CLI">CLI Usage:</h3>
                                     <div class="code-block">
                                         
                                         <p>STEP1: Clone or download this github repository:</p>
                                         <p><code>git clone https://github.com/Chiranjeevi2001/cobol-ruleforge.git</code></p>
                                         <br>
 <!--                                         <h5 id="running-backend">Running the RJoules backend</h5> -->
-                                        <p>STEP2: Navigate into the RJoules_main directory, copy the path of energy_measurement.R</p>
-                                        <p><code>cd RJoules/RJoules_main</code></p>
+                                        <p>STEP2: Navigate into the ../cobol-ruleforge/Test_COBOLs/InputFiles directory</p>
+                                        <p><code>cd ./cobol-ruleforge/Test_COBOLs/InputFiles</code></p>
                                         <p><code>pwd</code></p>
-					                    <p>For testing we have provided few test files here<a href=""></a>. Take any of the test file and update the PATH following STEP3 and run the below commands</p>
-                                        <code>cd RJoules/Test_files</code>
-                                        <code>R&lt;TESTFILENAME.R</code>
-                                        <p>STEP3: If you want to measure energy in your R script. Create a R script example. R and Import/source RJoules</p>
-                                        <p><code>source("PATH/energy_measurement.R")</code></p>
-<!--                                         <p style="color: red;">
-                                            <u>Note</u>: The <a href="https://pypi.org/project/sentence-transformers/">sentence-transformers</a>
-                                            may not get installed on some architectures of Mac systems. In such cases, kindly install the package
-                                            manually with conda (requires conda environment installed) using the following command.
-                                        </p> -->
-                                        <!-- <br> -->
-					                    <p>STEP4: Write the code for which energy measurements need to be done inside a function block as below example in example.R.</p>
-                                        <p><code>test_foo<-function(){<br>
-  
-  						                print("This is my foo function..")<br>
-  						                df <- data.frame("Age" = c(12, 21, 15, 5, 25), "Name" = c("Johnny", "Glen", "Alfie","Jack", "Finch"))<br>
-						                newdf <- df[order(df$Age), ]<br>
-					                    print(newdf)<br>
-							            }
-					                    </code></p>
-                                        <p>STEP5: Call measure_energy function defined in RJoules with test function name as parameter</p>
-                                        <p><code>measure_energy(test_foo)()</code></p>
-					                    <p>STEP6: Run example.R in console to get Energy measurements</p>
-                                        <p><code>R&lt;example.R --no-save></code></p>
-                                            <p>STEP7: Check the output in output.csv file</p>
-                                            <p><code>vi output.csv</code></p>
-                                        <br>
-<!--                                         <h5 id="loading-extension">Loading the Chrome extension</h5>
-                                        <p>Select the extensions option in control and customize menu in the Chrome browser</p>
-                                        <p><code>Customize and Control > More Tools > Extensions</code></p>
-                                        <img class="extensions" src="assets/images/demo/extensions_menu.png" alt="extensions menu">
-                                        <br>
-                                        <p>Enable the develper mode, click on load unpacked and select the <b>extension</b> folder</p>
-                                        <img class="extensions" src="assets/images/demo/load_unpacked.png" alt="load unpacked">
-                                        <p>Once the extension is loaded, enable it and allow it to work in incognito:</p>
-                                        <code>Details > Allow in incognito</code> -->
-                                        <!-- <br>
-                                        <img class="extensions" src="assets/images/demo/code.png" alt="plugin"> -->
-                                        <!-- <img class="extensions" src="assets/images/demo/allow_incognito.png" alt="plugin"> -->
-
-                                        <!-- <p><strong>Be sure to have CORS disabled on your browser.</strong></p> -->
-                                        <!-- <p>Load the extension directory in the Chrome browser in developer mode. 
-                                            <a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/">Instructions for loading</a></p> -->
+					                    <p>We have provided a few COBOL files here for testing. You can add additional files here along with them.</p>
+                                        <p>Navigate back to ./cobol-ruleforge/src folder</p>
+                                        <p><code>cd ../../src</code></p>
+                                        <p>'STEP3: Get the Gemini-Pro API key from <a href="https://aistudio.google.com/app/apikey">Google AI Studio, and paste it in the given space in all of the summarization scripts.</a></p>
+                                        <p>STEP4: Run the preprocess.py file to preprocess the input COBOL files</p>
+                                        <p><code>python preprocess.py</code></p>
+                                        <p>STEP5: Navigate back to the ./cobol-ruleforge folder, and provide execute access to Summarize.sh file</p>
+                                        <p><code>chmod +x Summarize.sh</code></p>
+                                        <p>STEP6: Execute Summarize.sh</p>
+                                        <p><code>./Summarize.sh</code></p>
+                                        <p>STEP7: The Business Rules summary output will be generated in the ./Test_COBOLs/Output_BR_Summary directory, ant the Code summary output will be generated in the ./Test_COBOLs/Output_Code_Summary directory</p>                              
                                         
-                                    </div><!--//code-block-->
-                                    <h3 class="block-title" id="usage">Usage</h3>
+                                    </div>
+                                    <h3 class="block-title" id="from-GUI">GUI Usage:</h3>
+                                    <div class="code-block">
+                                        <p>STEP1: Clone or download this github repository</p>
+                                        <p><code>git clone https://github.com/Chiranjeevi2001/cobol-ruleforge.git</code></p>
+                                        <p>STEP2: Navigate to the ./cobol-ruleforge/UI directory</p>
+                                        <p><code>cd ./cobol-ruleforge/UI</code></p>
+                                        <p>STEP3: Run the following command to open the GUI screen on your web browser</p>
+                                        <p><code>streamlit </code></p>
+
+                                    </div>
+                                </section>
+                                    <!-- <h3 class="block-title" id="usage">Usage</h3>
                                     <div class="code-block">
                                         <p>Measuring energy consumption due to R code snippets.</p>
-                                        <!-- <p>Ex: <a href="https://github.com/iNPUTmice/Conversations">iNPUTmice/Conversations</a></p> -->
+                                        <p>Ex: <a href="https://github.com/iNPUTmice/Conversations">iNPUTmice/Conversations</a></p>
                                        
-                                        <!-- <img src="assets/images/demo/isssues_tab.png" alt="issues tab"> -->
+                                         <img src="assets/images/demo/isssues_tab.png" alt="issues tab"> 
                                     </div>
-                                </div><!--//section-block-->
-                            </section><!--//doc-section-->
+                                </div>
+                            </section> -->
                             <section id="icons-section" class="doc-section">
                                 <h2 class="section-title">Approach diagram</h2>
                                 <div class="section-block">
@@ -334,8 +318,8 @@
                                     <nav class="doc-sub-menu nav flex-column">
                                         <a class="nav-link scrollto" href="#requirements">Requirements</a>
                                         <a class="nav-link scrollto" href="#from-github">From Github</a>
-                                        <a class="nav-link scrollto" href="#running-backend">Running the backend</a>
-                                        <a class="nav-link scrollto" href="#loading-extension">Loading the Chrome extension</a>
+                                        <!-- <a class="nav-link scrollto" href="#running-backend">Running the backend</a> -->
+                                        <!-- <a class="nav-link scrollto" href="#loading-extension">Loading the Chrome extension</a> -->
                                         <a class="nav-link scrollto" href="#usage">Usage</a>
                                     </nav><!--//nav-->
                                     <a class="nav-link scrollto" href="#icons-section">Approach</a>
